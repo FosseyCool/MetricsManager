@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MetricsAgent.Controllers
 {
+    [Route("api/network")]
+    [ApiController]
     public class NetworkAgentController : Controller
     {
-        // GET
-        public IActionResult Index()
+        [HttpGet("from/{fromTime}/to/{toTime}")]
+        public IActionResult GetMetricsNetwork([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
         {
-            return View();
+            return Ok();
         }
     }
 }

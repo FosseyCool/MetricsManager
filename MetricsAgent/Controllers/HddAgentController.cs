@@ -1,13 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MetricsAgent.Controllers
 {
+    [Route("api/metrics/hdd/left")]
+    [ApiController]
     public class HddAgentController : Controller
     {
-        // GET
-        public IActionResult Index()
+        [HttpGet("from/{fromTime}/to/{toTime}")]
+        public IActionResult GetMetricsHdd([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
         {
-            return View();
+            return Ok();
         }
+        
+        
     }
+    
 }

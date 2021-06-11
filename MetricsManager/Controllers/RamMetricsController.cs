@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MetricsManager.Controllers
 {
@@ -6,10 +7,16 @@ namespace MetricsManager.Controllers
     [ApiController]
     public class RamMetricsController : Controller
     {
-        // GET
-        public IActionResult Index()
+        [HttpGet("agent/{agentId}/from/{fromTime}/to/{toTime}")]
+        public IActionResult GetMetricsFromAgent([FromRoute] int agentId, [FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
         {
-            return View();
+            return Ok();
+        }
+
+        [HttpGet("cluster/from/{fromTime}/to/{toTime}")]
+        public IActionResult GetMetricsFromAllCluster([FromRoute] TimeSpan fromTime, [FromRoute] TimeSpan toTime)
+        {
+            return Ok();
         }
     }
 }

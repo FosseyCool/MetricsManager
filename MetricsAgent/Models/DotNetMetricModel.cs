@@ -2,7 +2,7 @@
 
 namespace MetricsAgent.Models
 {
-    public class DotNetMetric
+    public class DotNetMetricModel
     {
         public int Id { get; set; }
         public int Value { get; set; }

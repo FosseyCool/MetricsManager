@@ -1,11 +1,14 @@
 ﻿using System;
 
-namespace MetricsAgent.Models
+namespace MetricsAgent.DAL.Responses
 {
-    public class NetWorkMetric
+    public class RamMetric
     {
         public int Id { get; set; }
+         
         public int Value { get; set; }
+         
         public DateTimeOffset Time { get; set; }
+
     }
 }

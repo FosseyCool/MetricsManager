@@ -4,9 +4,9 @@ using MetricsAgent.Models;
 
 namespace MetricsAgent
 {
-    public class MaperProfile:Profile
+    public class MapperProfile:Profile
     {
-        public MaperProfile()
+        public MapperProfile()
         {
             CreateMap<CpuMetricModel, CpuMetric>().ForSourceMember(
                 x => x.Id, opt => opt.DoNotValidate());
